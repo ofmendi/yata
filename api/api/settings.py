@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
+    "user",
 ]
 
 MIDDLEWARE = [
@@ -70,6 +72,19 @@ TEMPLATES = [
 WSGI_APPLICATION = "api.wsgi.application"
 
 
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'yatadb',
+        'USER': 'yata',
+        'PASSWORD': 'password-is-yep-another-todo-app',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 
 # Password validation

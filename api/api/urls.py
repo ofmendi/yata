@@ -18,5 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('user.urls')),
 ]
 
+handler400 = 'rest_framework.exceptions.bad_request'
+handler500 = 'rest_framework.exceptions.server_error'
