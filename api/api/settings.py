@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "our_jwt_token",
     "rest_framework",
     "user",
 ]
@@ -118,3 +119,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = "/static/"
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_jwt.authentication.JSONWebTokenAuthentication",
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+        'our_jwt_token.permissions.IsTokenValid',
+    )
+}
+
+JWT_AUTH = {
+    "JWT_AUTH_HEADER_PREFIX": "Bearer",
+    "JWT_AUTH_COOKIE": "access_token",
+    "JWT_PAYLOAD_HANDLER": "our_jwt_token.utils.jwt_custom_payload_handler",
+    'JWT_SECRET_KEY': '8xv%j_a_ei*&(z*u62!nwu4j3gfk6bu4x^-@3t*@+7bjbot+v-',
+}
+
+AUTH_USER_MODEL = 'user.User'
