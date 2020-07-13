@@ -8,4 +8,6 @@ router.register('users', UserViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('registration/', RegistrationView.as_view()),
+    path('whoami/', WhoamiView.as_view()),
+    path('logout/', LogOutView.as_view()),
 ]
