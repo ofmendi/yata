@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "our_jwt_token",
     "rest_framework",
+    "todo",
     "user",
 ]
 
@@ -138,3 +139,4 @@ JWT_AUTH = {
 }
 
 AUTH_USER_MODEL = 'user.User'
+
