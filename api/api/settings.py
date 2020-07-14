@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "todo",
     "user",
     "notification",
+    "reminder",
+    "django_apscheduler",
 ]
 
 MIDDLEWARE = [
@@ -141,3 +143,9 @@ JWT_AUTH = {
 
 AUTH_USER_MODEL = 'user.User'
 
+SCHEDULER_CONFIG = {
+    "apscheduler.jobstores.default": {
+        "class": "django_apscheduler.jobstores:DjangoJobStore"
+    },
+}
+SCHEDULER_AUTOSTART = True

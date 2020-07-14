@@ -21,6 +21,7 @@ urlpatterns = [
     path('', include('todo.urls')),
     path('', include('user.urls')),
     path('', include('notification.urls')),
+    path('', include('reminder.urls')),
     path('', include('our_jwt_token.urls')),
 ]
 
