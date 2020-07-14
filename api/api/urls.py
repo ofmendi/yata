@@ -20,6 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('todo.urls')),
     path('', include('user.urls')),
+    path('', include('notification.urls')),
     path('', include('our_jwt_token.urls')),
 ]
 
