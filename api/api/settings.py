@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'yatadb',
         'USER': 'yata',
         'PASSWORD': 'password-is-yep-another-todo-app',
-        'HOST': 'localhost',
+        'HOST': 'postgres',
         'PORT': '',
     }
 }
