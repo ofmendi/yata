@@ -1,0 +1,12 @@
+[Unit]
+Description=startmigrate
+ConditionPathExists=/opt/migrate.sh
+After=postgresql.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/migrate.sh
+
+[Install]
+WantedBy=multi-user.target
+
